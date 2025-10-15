@@ -49,8 +49,7 @@ function ListaDeputados() {
       try {
         // Constrói a URL da API dinamicamente com os filtros e a página
         const params = new URLSearchParams({
-          itens: 50,
-          dataInicio: '2023-01-01',
+          itens: 50,          
           ordem: 'ASC',
           ordenarPor: 'nome',
           pagina: pagina,
