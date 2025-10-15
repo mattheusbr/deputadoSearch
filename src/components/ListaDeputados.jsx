@@ -39,7 +39,7 @@ function ListaDeputados() {
     const fetchDeputados = async () => {
       try {
         // 1. Buscando 50 deputados, conforme solicitado.
-        const response = await fetch('https://dadosabertos.camara.leg.br/api/v2/deputados?itens=50&dataInicio=2023-01-01&ordem=ASC&ordenarPor=nome');
+        const response = await fetch('https://dadosabertos.camara.leg.br/api/v2/deputados?itens=50&ordem=ASC&ordenarPor=nome');
         const data = await response.json();
         
         // 2. Garantindo que a lista não tenha nenhum item duplicado antes de salvar.
@@ -97,7 +97,7 @@ function ListaDeputados() {
         </Toolbar>
       </AppBar>
 
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Typography variant="h4" component="h1" gutterBottom align="center" sx={{ mb: 2, fontWeight: 'bold' }}>
           Explore os Deputados Federais
         </Typography>
@@ -165,7 +165,7 @@ function ListaDeputados() {
         ) : (
           <Grid container spacing={4} sx={{ justifyContent: 'center' }}>
             {deputadosFiltrados.length > 0 ? deputadosFiltrados.map((deputado) => (
-              <Grid item key={deputado.id} xs={12} sm={6} md={4} lg={3}>
+              <Grid item key={deputado.id} xs={12} sm={6} md={4} lg={2.4}>
                 <Card sx={{
                   display: 'flex',
                   flexDirection: 'column',
@@ -211,3 +211,4 @@ function ListaDeputados() {
 }
 
 export default ListaDeputados;
+
